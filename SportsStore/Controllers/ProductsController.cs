@@ -23,7 +23,7 @@ namespace SportsStore.Controllers
         }
 
         // GET: api/Products/{category}/Page{productPage}
-        [HttpGet("{category?}/Page{productPage}")]
+        [HttpGet("{category}/Page{productPage}")]
         public async Task<ActionResult<ProductsListViewModel>> GetProducts(string category, int productPage = 1)
         {
             return new ProductsListViewModel()
@@ -44,83 +44,103 @@ namespace SportsStore.Controllers
             };
         }
 
-//        // GET: api/Products/5
-//        [HttpGet("{id}")]
-//        public async Task<ActionResult<Product>> GetProduct(int id)
-//        {
-//            var product = await _context.Products.FindAsync(id);
+        // api/Products/{category}/Page{productPage}
+        [HttpGet("/Page{productPage}")]
+        public async Task<ActionResult<ProductsListViewModel>> GetProductsAll(string category, int productPage = 1)
+        {
+            return new ProductsListViewModel()
+            {
+                Products = repository.Products
+                .OrderBy(p => p.ProductID)
+                .Skip((productPage - 1) * PageSize)
+                .Take(PageSize),
 
-//            if (product == null)
-//            {
-//                return NotFound();
-//            }
+                PagingInfo = new PagingInfo()
+                {
+                    CurrentPage = productPage,
+                    ItemsPerPage = PageSize,
+                    TotalItems = repository.Products.Count(),
+                },
+                CurrentCategory = category
+            };
+        }
+        //        // GET: api/Products/5
+        //        [HttpGet("{id}")]
+        //        public async Task<ActionResult<Product>> GetProduct(int id)
+        //        {
+        //            var product = await _context.Products.FindAsync(id);
 
-//            return product;
-//        }
+        //            if (product == null)
+        //            {
+        //                return NotFound();
+        //            }
 
-//        // PUT: api/Products/5
-//        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-//        // more details see https://aka.ms/RazorPagesCRUD.
-//        [HttpPut("{id}")]
-//        public async Task<IActionResult> PutProduct(int id, Product product)
-//        {
-//            if (id != product.ProductID)
-//            {
-//                return BadRequest();
-//            }
+        //            return product;
+        //        }
 
-//            _context.Entry(product).State = EntityState.Modified;
+        //        // PUT: api/Products/5
+        //        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        //        // more details see https://aka.ms/RazorPagesCRUD.
+        //        [HttpPut("{id}")]
+        //        public async Task<IActionResult> PutProduct(int id, Product product)
+        //        {
+        //            if (id != product.ProductID)
+        //            {
+        //                return BadRequest();
+        //            }
 
-//            try
-//            {
-//                await _context.SaveChangesAsync();
-//            }
-//            catch (DbUpdateConcurrencyException)
-//            {
-//                if (!ProductExists(id))
-//                {
-//                    return NotFound();
-//                }
-//                else
-//                {
-//                    throw;
-//                }
-//            }
+        //            _context.Entry(product).State = EntityState.Modified;
 
-//            return NoContent();
-//        }
+        //            try
+        //            {
+        //                await _context.SaveChangesAsync();
+        //            }
+        //            catch (DbUpdateConcurrencyException)
+        //            {
+        //                if (!ProductExists(id))
+        //                {
+        //                    return NotFound();
+        //                }
+        //                else
+        //                {
+        //                    throw;
+        //                }
+        //            }
 
-//        // POST: api/Products
-//        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-//        // more details see https://aka.ms/RazorPagesCRUD.
-//        [HttpPost]
-//        public async Task<ActionResult<Product>> PostProduct(Product product)
-//        {
-//            _context.Products.Add(product);
-//            await _context.SaveChangesAsync();
+        //            return NoContent();
+        //        }
 
-//            return CreatedAtAction("GetProduct", new { id = product.ProductID }, product);
-//        }
+        //        // POST: api/Products
+        //        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        //        // more details see https://aka.ms/RazorPagesCRUD.
+        //        [HttpPost]
+        //        public async Task<ActionResult<Product>> PostProduct(Product product)
+        //        {
+        //            _context.Products.Add(product);
+        //            await _context.SaveChangesAsync();
 
-//        // DELETE: api/Products/5
-//        [HttpDelete("{id}")]
-//        public async Task<ActionResult<Product>> DeleteProduct(int id)
-//        {
-//            var product = await _context.Products.FindAsync(id);
-//            if (product == null)
-//            {
-//                return NotFound();
-//            }
+        //            return CreatedAtAction("GetProduct", new { id = product.ProductID }, product);
+        //        }
 
-//            _context.Products.Remove(product);
-//            await _context.SaveChangesAsync();
+        //        // DELETE: api/Products/5
+        //        [HttpDelete("{id}")]
+        //        public async Task<ActionResult<Product>> DeleteProduct(int id)
+        //        {
+        //            var product = await _context.Products.FindAsync(id);
+        //            if (product == null)
+        //            {
+        //                return NotFound();
+        //            }
 
-//            return product;
-//        }
+        //            _context.Products.Remove(product);
+        //            await _context.SaveChangesAsync();
 
-//        private bool ProductExists(int id)
-//        {
-//            return _context.Products.Any(e => e.ProductID == id);
-//        }
+        //            return product;
+        //        }
+
+        //        private bool ProductExists(int id)
+        //        {
+        //            return _context.Products.Any(e => e.ProductID == id);
+        //        }
     }
 }
