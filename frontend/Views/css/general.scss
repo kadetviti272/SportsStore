@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
+$white: #fff;
+$lite-red: #ed145b;
+$black: black;
+$gray: #5a5a5a;
+$lite-gray: #f4f4f4;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    color: $white;
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .container-fluid {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    max-width: 100%;
+    
+}
+
+
+h1 {
+    font-size: 50px !important;
+}
+
+
+.gray-text {
+    color: $gray;
+}
+
+.bold-span {
+    font-weight: 900;
+}
+
+.hr-small {
+    display: inline-block;
+    width: 20%;
+    height: 1px;
+    background-color: $lite-red;
+}
+
+.hr-lg {
+    display: inline-block;
+    width: 50%;
+    height: 2px;
+    background-color: $lite-red;
+}
+
+.border-btm {
+    padding-bottom: 20px;
+    color: $gray;
+    height: 1px;
+    border-bottom: 2px solid $lite-red;
+}
+
+.small-span {
+    font-weight: 300 !important;
+}
+
+
+@mixin btn($color, $bg-color, $padd...) {
+    text-transform: uppercase;
+    font-weight: bold;
+    background: $bg-color;
+    color: $color;
+    border-radius: 25px;
+    text-decoration: none !important;
+    padding: $padd;
+    transition: 0.5s;
+
+    &:hover {
+        color: $bg-color !important;
+        background: $color !important;
+    }
+
+}
+
+
+.btn-white-lg {
+    @include btn($lite-red, $white, 13px 60px 13px 60px);
+
+    &:hover {
+        background-color: $gray !important;
+        color: $white !important;
+    }
+
+}
+
+.btn-red-lg {
+
+    @include btn($white, $lite-red, 13px 50px 13px 50px);
+
+    &:hover {
+        background-color: $gray !important;
+        color: $white !important;
+    }
+}
+
+.btn-gray-lg {
+    position: absolute;
+    margin-top: -45px;
+    margin-left: -90px;
+    @include btn($gray, #f4f4f4, 13px 50px 13px 50px);
+
+    &:hover {
+        background-color: $gray !important;
+
+    }
+
+}
+
+.price-value {
+    font-size: 19px;
+}
+
+.number-lg {
+    font-size: 45px;
+}
+
+
+
+#welcome-page {
+    background: url('../img/background.jpg');
+    background-position: center center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .nav-item {
+        .nav-link {
+            font-weight: bold;
+            color: $white !important;
+            transition: 0.5s;
+
+            &:hover {
+                color: $lite-red !important;
+            }
+        }
+    }
+
+    #welcome-content {
+        padding-top: 12%;
+    }
+
+    p {
+        font-size: 19px;
+
+
+    }
+}
+#products{
+    .card-text{
+        color: $gray;
+    }
+    .card{
+        border: 1px solid $gray !important;
+    }
+    #price-product{
+        font-size: 20px;
+        font-weight: bold;
+        color: $lite-red;
+    }
+}
+
+.p-100 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.p-50 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+h4 {
+    color: $lite-red;
+}
+
+.card {
+    border: none !important;
+}
+
+.card-header {
+    background-color: rgba(0, 0, 0, 0) !important;
+    border: none !important;
+}
+
+
+.gray-color {
+    color: $gray;
+}
+
+
+
+
+
+#became {
+    background-color: $lite-red;
+    text-transform: uppercase;
+
+    h2 {
+        font-size: 38px !important;
+        font-weight: 300 !important;
+    }
+
+}
+
+#updates {
+    h4 {
+        font-size: 19px;
+        color: $gray !important;
+    }
+
+    p {
+        color: $gray !important;
+
+    }
+
+    .card-body {
+        background-color: $lite-gray !important;
+    }
+
+    .card-header {
+        padding: 0 !important;
+        padding-top: 30px !important;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    a {
+        font-weight: bold;
+        text-transform: uppercase;
+
+        color: $lite-red !important;
+        text-decoration: none;
+        transition: 0.5s;
+
+        &:hover {
+            filter: grayscale(1);
+        }
+    }
+
+
+}
+
+
+
+
+
+footer {
+    background-color: #2b2b2b;
+}
+
+@media(max-width: 768px) {
+    * {
+        text-align: center !important;
+    }
+
+    .macbook-section {
+        padding-top: 25px;
+    }
+
+    #prices .card {
+        margin-bottom: 35px;
+    }
+
+    #became h2 {
+        margin-bottom: 25px !important;
+    }
+
+    #download p {
+        margin-bottom: 45px;
+    }
+}

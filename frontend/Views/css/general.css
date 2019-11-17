@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  max-width: 100%;
+}
+
+* img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+* .container-fluid {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+h1 {
+  font-size: 50px !important;
+}
+
+.gray-text {
+  color: #5a5a5a;
+}
+
+.bold-span {
+  font-weight: 900;
+}
+
+.hr-small {
+  display: inline-block;
+  width: 20%;
+  height: 1px;
+  background-color: #ed145b;
+}
+
+.hr-lg {
+  display: inline-block;
+  width: 50%;
+  height: 2px;
+  background-color: #ed145b;
+}
+
+.border-btm {
+  padding-bottom: 20px;
+  color: #5a5a5a;
+  height: 1px;
+  border-bottom: 2px solid #ed145b;
+}
+
+.small-span {
+  font-weight: 300 !important;
+}
+
+.btn-white-lg {
+  text-transform: uppercase;
+  font-weight: bold;
+  background: #fff;
+  color: #ed145b;
+  border-radius: 25px;
+  text-decoration: none !important;
+  padding: 13px 60px 13px 60px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.btn-white-lg:hover {
+  color: #fff !important;
+  background: #ed145b !important;
+}
+
+.btn-white-lg:hover {
+  background-color: #5a5a5a !important;
+  color: #fff !important;
+}
+
+.btn-red-lg {
+  text-transform: uppercase;
+  font-weight: bold;
+  background: #ed145b;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none !important;
+  padding: 13px 50px 13px 50px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.btn-red-lg:hover {
+  color: #ed145b !important;
+  background: #fff !important;
+}
+
+.btn-red-lg:hover {
+  background-color: #5a5a5a !important;
+  color: #fff !important;
+}
+
+.btn-gray-lg {
+  position: absolute;
+  margin-top: -45px;
+  margin-left: -90px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: #f4f4f4;
+  color: #5a5a5a;
+  border-radius: 25px;
+  text-decoration: none !important;
+  padding: 13px 50px 13px 50px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.btn-gray-lg:hover {
+  color: #f4f4f4 !important;
+  background: #5a5a5a !important;
+}
+
+.btn-gray-lg:hover {
+  background-color: #5a5a5a !important;
+}
+
+.price-value {
+  font-size: 19px;
+}
+
+.number-lg {
+  font-size: 45px;
+}
+
+#welcome-page {
+  background: url("../img/background.jpg");
+  background-position: center center;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#welcome-page .nav-item .nav-link {
+  font-weight: bold;
+  color: #fff !important;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#welcome-page .nav-item .nav-link:hover {
+  color: #ed145b !important;
+}
+
+#welcome-page #welcome-content {
+  padding-top: 12%;
+}
+
+#welcome-page p {
+  font-size: 19px;
+}
+
+#products .card-text {
+  color: #5a5a5a;
+}
+
+#products .card {
+  border: 1px solid #5a5a5a !important;
+}
+
+#products #price-product {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ed145b;
+}
+
+.p-100 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.p-50 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+h4 {
+  color: #ed145b;
+}
+
+.card {
+  border: none !important;
+}
+
+.card-header {
+  background-color: rgba(0, 0, 0, 0) !important;
+  border: none !important;
+}
+
+.gray-color {
+  color: #5a5a5a;
+}
+
+#became {
+  background-color: #ed145b;
+  text-transform: uppercase;
+}
+
+#became h2 {
+  font-size: 38px !important;
+  font-weight: 300 !important;
+}
+
+#updates h4 {
+  font-size: 19px;
+  color: #5a5a5a !important;
+}
+
+#updates p {
+  color: #5a5a5a !important;
+}
+
+#updates .card-body {
+  background-color: #f4f4f4 !important;
+}
+
+#updates .card-header {
+  padding: 0 !important;
+  padding-top: 30px !important;
+}
+
+#updates .card-header img {
+  width: 100%;
+}
+
+#updates a {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ed145b !important;
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#updates a:hover {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+footer {
+  background-color: #2b2b2b;
+}
+
+@media (max-width: 768px) {
+  * {
+    text-align: center !important;
+  }
+  .macbook-section {
+    padding-top: 25px;
+  }
+  #prices .card {
+    margin-bottom: 35px;
+  }
+  #became h2 {
+    margin-bottom: 25px !important;
+  }
+  #download p {
+    margin-bottom: 45px;
+  }
+}
+/*# sourceMappingURL=general.css.map */
